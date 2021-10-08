@@ -1,0 +1,63 @@
+<div *ngIf="showMessage" class="alert alert-success" role="alert">
+    Mentor successfully deleted!
+   </div>
+   <div class="input-group mb-3">
+     <span class="input-group-text" id="basic-addon1">Search</span>
+     <input type="text" #search (keyup)="0" class="form-control" placeholder="Search a mentor" aria-label="Username" aria-describedby="basic-addon1">
+   </div> 
+
+   <br>
+   <!-- <div class="input-group mb-3">
+    <input type="text" #name (keyup)="0" class="form-control" placeholder="Enter Name" aria-label="Username" aria-describedby="basic-addon1">
+    <button class="btn btn-primary" (click)="updateMentor(name.value)">Update </button>
+  </div> -->
+   <!-- <table class="table">
+    <thead>
+      <tr>
+           <th style="color:blue" scope="col">#</th>
+           <th style="color:blue" scope="col">Name</th>
+           <th style="color:blue" scope="col">Course</th>
+           <th style="color:blue" scope="col">Description</th>
+           <th style="color:blue" scope="col">Rating</th>
+           <th scope="col"  style="color:blue">Fees</th>
+           <th scope="col"  style="color:blue"colspan="1">Actions</th> 
+           
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let mentor of mentors  | searchWorkout:search.value">
+           <th  scope="row">{{mentor.id}}</th>
+           <td class="title" >{{mentor.name}}</td>
+           <td >{{mentor.course}}</td>
+           <td >{{mentor.descp}}</td>
+           <td >{{mentor.rating}}</td>
+           <td >{{mentor.fees}}</td>
+           <td style="color:red">{{workout.startTime |  date: 'shortTime'}}</td> 
+           <td style="color:red">{{workout.endTime |  date: 'shortTime'}}</td>
+           
+           <td class = "totalcals" style="color:red">{{workout.totalCaloriesBurnt? workout.totalCaloriesBurnt:0}}</td> -->
+           <!-- <td><button (click)="deleteMentor(mentor.id)" class="btn btn-danger"> X </button></td>  -->
+           <!-- <td><button [disabled]="workout.startTime" (click)="startWorkout" class="btn btn-primary"> Start </button></td> -->
+           <!-- <td><button [disabled]="!workout.startTime || workout.endTime" (click)="workout.endTime"class="btn btn-primary"> End </button></td>  -->
+         <!-- </tr> -->
+        
+       <!-- </tbody>  -->
+      <!-- </table>  -->
+  
+     
+<div class="row">
+  <div class="column" *ngFor="let mentor of mentors  | searchWorkout:search.value">
+    <div class="card" >  
+      <img src="https://www.w3schools.com/howto/img_avatar.png" class="card-img-top" alt="..." width="100" 
+      height="100"/>
+       <button (click)="deleteMentor(mentor.id)" class="btn btn-danger" style="color: red;"> X </button>  
+      <h3>{{mentor.name}}</h3>
+      <p>Course:{{mentor.course}}</p>
+      <p>Description:{{mentor.descp}}</p>
+      <p>fees:{{mentor.fees}}/-</p>
+    </div>
+  </div>
+ 
+</div>
+
+
