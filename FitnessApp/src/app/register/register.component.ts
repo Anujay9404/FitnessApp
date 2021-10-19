@@ -26,6 +26,7 @@ firstName: ['', Validators.required],
 lastName: ['', Validators.required],
 phone: ['', Validators.required],
 email: ['', [Validators.required,Validators.email]],
+course: ['', Validators.required],
 password: ['', [Validators.required, Validators.minLength(6)]]
 });
 }

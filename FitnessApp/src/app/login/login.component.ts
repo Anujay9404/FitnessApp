@@ -44,6 +44,7 @@ this.loading = true;
 this.authenticationService.login(this.fval.email.value, this.fval.password.value)
 .subscribe(
   (_res: any) => {
+    // alert('Logged In successfully!');
 this.router.navigate(['/']);
 },
   (error: { error: { message: any; }; }) => {

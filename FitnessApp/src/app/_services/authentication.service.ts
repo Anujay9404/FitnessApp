@@ -24,19 +24,21 @@ public get currentUserValue(): User {
 return this.currentUserSubject.value;
 }
  
-login(email: string, password: string) {
-return this.http.post<any>('/users', { email, password })
-.pipe(map(user => {
-if (user && user.token) {
-// store user details in local storage to keep user logged in
-localStorage.setItem('currentUser', JSON.stringify(user.result));
-this.currentUserSubject.next(user);
-}
+// login(email: string, password: string) {
+// return this.http.post<any>('/users', { email, password })
+// .pipe(map(user => {
+// if (user && user.token) {
+// // store user details in local storage to keep user logged in
+// localStorage.setItem('currentUser', JSON.stringify(user.result));
+// this.currentUserSubject.next(user);
+// }
  
-return user;
-}));
+// return user;
+// }));
+// }
+login(email: string, password: string){
+  return this.http.post('http://localhost:9001/login/',{ email, password });
 }
- 
 logout() {
 // remove user data from local storage for log out
 localStorage.removeItem('currentUser');

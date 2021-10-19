@@ -11,7 +11,7 @@ export class SearchPipe implements PipeTransform {
     console.log(mentors);
     console.log(searchValue)
 
-    let filteredMentors = mentors.filter(mentor=> mentor.name.toLowerCase().includes(searchValue.toLowerCase()))
+    let filteredMentors = mentors.filter(mentor=> mentor.course.toLowerCase().includes(searchValue.toLowerCase()))
 
     return filteredMentors;
   }

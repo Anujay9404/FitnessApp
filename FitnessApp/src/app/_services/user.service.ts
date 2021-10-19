@@ -11,7 +11,5 @@ register(user: User) {
 return this.http.post('http://localhost:9001/users/', user);
 }
  
-// login(user:any){
-//     return this.http.post('',user);
-// }
+
 }
